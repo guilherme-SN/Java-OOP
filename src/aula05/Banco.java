@@ -54,13 +54,13 @@ public class Banco {
 
 
     public void abrirConta(String t) {
-        setStatus(true);
-        setTipo(t);
+        this.setStatus(true);
+        this.setTipo(t);
 
         if (t.equals("CC")) {
-            setSaldo(50);
+            this.setSaldo(50);
         } else if (t.equals("CP")) {
-            setSaldo(150);
+            this.setSaldo(150);
         } else {
             System.out.println("Por favor, informe um tipo de conta válido!");
         }
@@ -68,20 +68,20 @@ public class Banco {
 
 
     public void fecharConta() {
-        if (getSaldo() == 0) {
+        if (this.getSaldo() == 0) {
             System.out.println("Fechando sua conta");
-            setStatus(false);
-        } else if (getSaldo() > 0) {
-            System.out.printf("Ainda há R$%.2f na sua conta. Por favor, deposite esse valor antes!", getSaldo());
+            this.setStatus(false);
+        } else if (this.getSaldo() > 0) {
+            System.out.printf("Ainda há R$%.2f na sua conta. Por favor, deposite esse valor antes!", this.getSaldo());
         } else {
-            System.out.printf("Você está devendo R$%.2f para o banco. Por favor, deposite esse valor antes!",getSaldo() * (-1));
+            System.out.printf("Você está devendo R$%.2f para o banco. Por favor, deposite esse valor antes!", this.getSaldo() * (-1));
         }
     }
 
 
     public void depositar(float qnt) {
-        if (getStatus()) {
-           setSaldo(getSaldo() + qnt);
+        if (this.getStatus()) {
+            this.setSaldo(this.getSaldo() + qnt);
         } else {
             System.out.println("Por favor, abra sua conta antes.");
         }
@@ -89,8 +89,8 @@ public class Banco {
 
 
     public void sacar(float qnt) {
-        if (getStatus()) {
-            setSaldo(getSaldo() - qnt);
+        if (this.getStatus()) {
+            this.setSaldo(this.getSaldo() - qnt);
         } else {
             System.out.println("Por favor, abra sua conta antes.");
         }
@@ -98,10 +98,10 @@ public class Banco {
 
 
     public void pagarMensal() {
-        if (getTipo().equals("CC")) {
-           setSaldo(getSaldo() - 12);
+        if (this.getTipo().equals("CC")) {
+            this.setSaldo(this.getSaldo() - 12);
         } else {
-            setSaldo(getSaldo() - 20);
+            this.setSaldo(this.getSaldo() - 20);
         }
     }
 }
