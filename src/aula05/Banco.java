@@ -8,8 +8,8 @@ public class Banco {
     private boolean status;
 
     public Banco() {
-        setSaldo(0);
-        setStatus(false);
+        this.setSaldo(0);
+        this.setStatus(false);
     }
 
     public int getNumConta() {
