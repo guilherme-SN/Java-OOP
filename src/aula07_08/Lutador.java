@@ -8,9 +8,7 @@ public class Lutador {
         private float altura;
         private float peso;
         private String categoria;
-        private int vitorias;
-        private int derrotas;
-        private int empates;
+        private int vitorias, derrotas, empates;
 
     // Método Construtor
     public Lutador(String nome, String nacionalidade, int idade, float altura, float peso, int vitorias, int derrotas, int empates) {
@@ -30,7 +28,7 @@ public class Lutador {
         System.out.println("Origem: " + this.getNacionalidade());
         System.out.println(this.getIdade() + " anos");
         System.out.println(this.getAltura() + "m de altura");
-        System.out.println("Pesando: " + this.getPeso());
+        System.out.println("Pesando: " + this.getPeso() + "kg");
         System.out.println("Ganhou: " + this.getVitorias());
         System.out.println("Perdeu: " + this.getDerrotas());
         System.out.println("Empatou: " + this.getEmpates());
@@ -102,7 +100,7 @@ public class Lutador {
         return categoria;
     }
 
-    public void setCategoria() {
+    private void setCategoria() {
         if (this.getPeso() < 52.2) {
             this.categoria = "Inválido";
         } else if (this.getPeso() <= 70.3) {
